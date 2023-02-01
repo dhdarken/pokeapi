@@ -1,25 +1,21 @@
-const pokeList= document.getElementById("pokelist");
+const pokeList = document.getElementById("pokelist");
 
-
-(()=>{
-    const pokemonshtml =document.getElementById("pokelist")
-fetch("https://pokeapi.co/api/v2/pokemon?offset=10&limit=200")
-.then((
-    resolved
-)=>
-resolved.json()
-
-)
-.then((resolved)=>{
-    console.log(resolved)
-    let pokemonsli="";
-    let poke=resolved.results;
-    for(let i=0;i<3900;i++){
-    const ID=poke[i].url.split("/")[6];
-    console.log(ID)
-    const pokename= poke[i].name;
-    console.log(pokename);
-    pokemonsli=pokemonsli+`
+(() => {
+  const pokemonshtml = document.getElementById("pokelist");
+  fetch("https://pokeapi.co/api/v2/pokemon?offset=10&limit=200")
+    .then((resolved) => resolved.json())
+    .then((resolved) => {
+      console.log(resolved);
+      let pokemonsli = "";
+      let poke = resolved.results;
+      for (let i = 0; i < poke.length; i++) {
+        const ID = poke[i].url.split("/")[6];
+        console.log(ID);
+        const pokename = poke[i].name;
+        console.log(pokename);
+        pokemonsli =
+          pokemonsli +
+          `
     <li>
         <div>
             <div id="triangulo">
@@ -29,15 +25,11 @@ resolved.json()
             <span id="names">${pokename}</span>
         </div>
     </li>
-   `
-    pokemonshtml.innerHTML=pokemonsli    
-}
-
-})
-.catch((error)=>{
-console.log(error)
-})
-
-
-}) ();
-    
+   `;
+        pokemonshtml.innerHTML = pokemonsli;
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+})();
