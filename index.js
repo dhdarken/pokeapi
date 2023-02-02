@@ -19,10 +19,10 @@ const pokeList = document.getElementById("pokelist");
     <li>
         <div>
             <div id="triangulo">
-                <span id="numero">${ID}</span>
+                ${ID}
             </div>
             <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${ID}.png" alt="foto de el pokemon ${pokename} ">
-            <span id="names">${pokename}</span>
+            <button id="btn-names">${pokename}</button>
         </div>
     </li>
    `;
