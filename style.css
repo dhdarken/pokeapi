@@ -40,7 +40,16 @@ ul > li > div {
   flex-wrap: wrap;
 }
 
-#btn-names {
+.poke-name:hover {
+  background-color: var(--base-color-btn);
+  color: var(--base-color-h);
+  cursor: pointer;
+  -webkit-box-shadow: 5px 7px 15px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 7px 15px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 7px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+.poke-name {
   font-size: var(--space-20);
   font-weight: var(--font-w);
   background-color: rgb(245, 235, 235);
@@ -48,15 +57,6 @@ ul > li > div {
   width: 70%;
   border: none;
   color: var(--color-letter);
-}
-
-#btn-names:hover {
-  background-color: var(--base-color-btn);
-  color: var(--base-color-h);
-  cursor: pointer;
-  -webkit-box-shadow: 5px 7px 15px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 5px 7px 15px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 5px 7px 15px 0px rgba(0, 0, 0, 0.75);
 }
 
 #triangulo {
@@ -81,6 +81,45 @@ ul > li > div ::after {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+
+#details-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#card {
+  height: 90%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--base-color);
+  border-radius: var(--space-20);
+  gap: var(--space-30);
+}
+
+#hp {
+  border: 2px solid black;
+}
+.pokestats {
+  height: 90px;
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.pokestats > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
