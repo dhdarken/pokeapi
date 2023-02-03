@@ -70,27 +70,24 @@ function addListeners(){
     card.innerHTML=`
     
       <p id="hp">
-        <span id="hp">hp</span>
+        <span>hp</span>
         ${hp}
       </p>
-      <img src="${getPokeImag(ID)} " alt="pokemon ${pokename} ">
+      <img id="w_imag" src="${getPokeImag(ID)} " alt="pokemon ${pokename} ">
       <h2 class="pokename">${pokename} </h2>
-      <div class="types">
-          <span>type1</span>
-          <span>type2</span>
-      </div>
+    
       <div class="pokestats">
           <div>
               <h3>${statAtack} </h3>
-              <p>attack</p>
+              <span>attack</span>
           </div>
           <div>
               <h3>${statDef} </h3>
-              <p>Defense</p>
+              <span>Defense</span>
           </div>
           <div>
             <h3>${statSpeed} </h3>
-            <p>Speed</p>
+            <span>Speed</span>
           </div>
       </div>
     
