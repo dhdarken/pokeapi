@@ -9,18 +9,21 @@ function getPokeImag(ID){
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${ID}.png`
 }
 let currentPokemon= undefined;
-
+        
 function addListeners(){
   const pokebutons= document.getElementsByClassName("btn-names");
   Array.from(pokebutons).forEach((pokebtn)=>{
     pokebtn.addEventListener("click",(Event)=>{
       currentPokemon=Event.target.id;
+      console.log(currentPokemon);
+      window.location.href = `./details.html?id=${Event.target.id} `
       listSection.style.display="none";
       pokemonDetails.style.display="block";
       fillPokemonDetails();
     });
   });
 };
+
 
 (() => {
   const pokemonshtml = document.getElementById("pokelist");
@@ -31,7 +34,7 @@ function addListeners(){
       let poke = resolved.results;
       for (let i = 0; i < poke.length; i++) {
         const ID = poke[i].url.split("/")[6];
-        const pokename = poke[i].name;
+        const pokename = poke[i].name; 
         pokemonsli =
           pokemonsli +
           `
@@ -45,56 +48,6 @@ function addListeners(){
         </div>
     </li>
    `
-
-   const url = "https://pokeapi.co/api/v2/pokemon/"
-   const card = document.getElementById("card");
-   const btn = document.getElementById("ID");
-
-   let getPokeData=()=>{
-    const finalurl=url+ID;
-    fetch(finalurl)
-    .then((Response)=>Response.json())
-    .then((data)=>{
-     generateCard(data);
-    })
-   };
-
-   let generateCard=(data)=>{
-    const hp=data.stats[0].base_stat;
-    console.log(hp);    
-    const pokename= data.name;
-    const statAtack=data.stats[1].base_stat;
-    const statDef=data.stats[2].base_stat;
-    const statSpeed=data.stats[5].base_stat;
-
-    card.innerHTML=`
-    
-      <p id="hp">
-        <span>hp</span>
-        ${hp}
-      </p>
-      <img id="w_imag" src="${getPokeImag(ID)} " alt="pokemon ${pokename} ">
-      <h2 class="pokename">${pokename} </h2>
-    
-      <div class="pokestats">
-          <div>
-              <h3>${statAtack} </h3>
-              <span>attack</span>
-          </div>
-          <div>
-              <h3>${statDef} </h3>
-              <span>Defense</span>
-          </div>
-          <div>
-            <h3>${statSpeed} </h3>
-            <span>Speed</span>
-          </div>
-      </div>
-    
-    `
-   }
-   
-   getPokeData();
    ;
         pokemonshtml.innerHTML = pokemonsli;
         addListeners();
