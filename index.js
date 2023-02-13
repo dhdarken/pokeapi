@@ -1,7 +1,11 @@
 
-const pokeList = document.getElementById("pokelist");
-const pokemonDetails=document.getElementById("details-section");
-const listSection= document.getElementById("listsection");
+const d=document;
+const btnNext=d.getElementById("btnSiguiente");
+const btnPrevious=d.getElementById("btnAnterior");
+const pokeList = d.getElementById("pokelist");
+const pokemonDetails=d.getElementById("details-section");
+const listSection= d.getElementById("listsection");
+let url="https://pokeapi.co/api/v2/pokemon?offset=0&limit=9";
 function fillPokemonDetails(ID){
 }
 
@@ -27,9 +31,10 @@ function addListeners(){
 
 (() => {
   const pokemonshtml = document.getElementById("pokelist");
-  fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=10")
+  fetch(url)
     .then((resolved) => resolved.json())
     .then((resolved) => {
+      console.log(resolved.next)
       let pokemonsli = "";
       let poke = resolved.results;
       for (let i = 0; i < poke.length; i++) {

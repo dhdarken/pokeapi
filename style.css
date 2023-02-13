@@ -19,6 +19,8 @@
 
 body {
   margin: 0;
+  background: url(./imag/Poké_Ball_icon.svg.png) no-repeat center;
+  background-color: rgb(92, 89, 89);
 }
 
 #serach-container {
@@ -118,6 +120,8 @@ ul > li > div ::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(./imag/Poké_Ball_icon.svg.png) no-repeat center;
+  background-color: var(--base-color-btn);
 }
 
 #card {
@@ -128,6 +132,9 @@ ul > li > div ::after {
   align-items: center;
   background-color: var(--base-color);
   border-radius: var(--space-20);
+  -webkit-box-shadow: 20px 20px 5px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 20px 20px 5px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 20px 20px 5px 3px rgba(0, 0, 0, 0.75);
 }
 
 #hp {
@@ -206,22 +213,33 @@ ul > li > div ::after {
 }
 
 .paginacion {
-  margin-top: 0px;
+  height: 10%;
+  width: 100%;
+  background-color: rgb(69, 78, 78);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
   gap: 20px;
-  margin-top: 20px;
+  border-radius: var(--space-20);
+  -webkit-box-shadow: 20px 20px 5px 3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 20px 20px 5px 3px rgba(0, 0, 0, 0.75);
+  box-shadow: 20px 20px 5px 3px rgba(0, 0, 0, 0.75);
 }
 
 .btn {
-  width: 30%;
+  width: 20%;
   height: 30px;
   border-radius: var(--space-20);
   border: none;
   background-color: rgb(9, 165, 232);
   color: var(--color-letter);
+  margin: 10px;
+}
+.btn:hover {
+  background-color: rgb(24, 89, 117);
+  cursor: pointer;
 }
 
 @media (min-width: 650px) {
