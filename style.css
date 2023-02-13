@@ -7,7 +7,7 @@
 
 :root {
   --base-color: rgb(202, 198, 198);
-  --base-color-btn: rgb(187, 173, 173);
+  --base-color-btn: rgb(185, 168, 168);
   --base-color-t: #d0d2d0;
   --base-color-h: rgb(245, 235, 235);
   --color-letter: rgb(215, 134, 134);
@@ -134,18 +134,20 @@ ul > li > div ::after {
   width: 60px;
   border-radius: var(--space-20);
   text-align: center;
-  margin-left: 60%;
+  margin-left: 70%;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: var(--color-letter);
   background-color: var(--base-color-h);
   font-size: var(--space-20);
 }
 .pokename {
   color: var(--color-letter);
-  font-size: var(--space-40);
+  font-size: var(--space-30);
 }
 
 #types {
-  width: 80%;
+  width: 70%;
   text-align: center;
   border-radius: var(--space-20);
   background-color: var(--base-color-h);
@@ -161,9 +163,10 @@ ul > li > div ::after {
   flex-direction: row;
   gap: 20px;
   color: var(--color-letter);
-  margin: 10px;
   text-align: center;
-  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 85%;
 }
 
 #abilities > div {
@@ -188,11 +191,11 @@ ul > li > div ::after {
 }
 
 .pokestats > div {
-  background-color: var(--base-color-btn);
+  background-color: var(--base-color-h);
   border-radius: var(--space-20);
-  margin: 10px;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 80px;
+  margin-bottom: 10px;
   color: var(--color-letter);
 }
 
@@ -200,6 +203,25 @@ ul > li > div ::after {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+}
+
+.paginacion {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn {
+  width: 30%;
+  height: 30px;
+  border-radius: var(--space-20);
+  border: none;
+  background-color: rgb(9, 165, 232);
+  color: var(--color-letter);
 }
 
 @media (min-width: 650px) {

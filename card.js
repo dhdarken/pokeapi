@@ -16,7 +16,6 @@ const typeColor={
   rock:"#2d3436",
   water:"#0190FF",
 }
-
 const especies = document.querySelector(".card");
 const getUrl= new URLSearchParams(window.location.search);
 id = getUrl.get("id");
@@ -24,6 +23,18 @@ const url="https://pokeapi.co/api/v2/pokemon";
 function getPokeImag(id){
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
   }
+const d=document;
+const btnAnterior=d.getElementById("btnAnterior");
+const btnSiguiente=d.getElementById("btnSiguiente");
+btnAnterior.addEventListener("click",(e)=>{
+  const click=e.target
+  console.log(click)
+})
+btnSiguiente.addEventListener("click",(e)=>{
+  const clicks=e.target
+  console.log(clicks)
+})
+
 
 fetch(`${url}/${id}`)
 .then((resolved) => resolved.json())
