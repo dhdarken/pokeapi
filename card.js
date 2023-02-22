@@ -11,8 +11,8 @@ const typeColor={
   ghost:"#a55eea",
   ice:"#74b9ff",
   normal:"#95afc0",
-  posion:"#6c5ce7",
-  phychic:"#a29bfe",
+  poison:"#6c5ce7",
+  psychic:"#a29bfe",
   rock:"#2d3436",
   water:"#0190FF",
 }
@@ -51,6 +51,15 @@ fetch(urlFinal)
         const specAtack=data.stats[3].base_stat;
         const specDefen=data.stats[4].base_stat;
         const statSpeed=data.stats[5].base_stat;
+        //for (let i = 0; i <data.types.length; i++) {
+          //const themeColor= typeColor[data.types[i].type.name];
+          //console.log(themeColor);
+          //console.log(typeColor);
+        //}
+
+        const themeColor=typeColor[data.types[0].type.name];
+
+
         card.innerHTML=`
           <p id="id"> ${id}</p>
           <img id="w_imag" src="${getPokeImag(id)}" alt="pokemon ${pokename} ">
@@ -58,7 +67,7 @@ fetch(urlFinal)
           <h2 class="pokename">${pokename} </h2>
           <div class="types">
           ${data.types?.map(pokemonType=> (
-            '<span>'+pokemonType?.type?.name+'</span>'
+            `<span class="types" style= "background-color:${themeColor}" >`+pokemonType?.type?.name+'</span>'
           )).join(' ')}
           </div>
           <div class="abilities">

@@ -9,7 +9,7 @@
   --base-color: rgb(202, 198, 198);
   --base-color-btn: rgb(185, 168, 168);
   --base-color-whit: #fff;
-  --base-color-t: #c6e7c6;
+  --base-color-t: #9d9d9d;
   --base-color-h: rgb(245, 235, 235);
   --color-letter: rgb(215, 134, 134);
   --space-20: 20px;
@@ -157,22 +157,19 @@ ul > li > div ::after {
 .abilities {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 .abilities > span {
   display: flex;
   justify-content: center;
-  width: 130px;
-  background-color: var(--base-color-t);
+  width: 190px;
+  background-color: #8984af;
   flex-direction: row;
-  border-radius: 20px;
-  color: var(--color-letter);
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  color: var(--base-color-whit);
 }
 
 .types {
-  width: 70%;
   text-align: center;
   border-radius: var(--space-20);
   color: var(--color-letter);
@@ -185,13 +182,14 @@ ul > li > div ::after {
   flex-direction: column;
   width: 100px;
   border-radius: 20px;
-  background-color: var(--base-color-t);
+  color: var(--base-color-whit);
+  font-weight: 100;
 }
 
 .abilities {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  flex-direction: column;
+  gap: 5px;
   justify-content: center;
   align-items: center;
   color: var(--color-letter);
@@ -202,7 +200,7 @@ ul > li > div ::after {
 }
 
 .pokestats {
-  height: 150px;
+  height: 130px;
 }
 
 .pokestats > div > h3 {
@@ -227,7 +225,7 @@ ul > li > div ::after {
 .pokestats {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 5px;
 }
 
 .paginacion {
@@ -267,7 +265,7 @@ ul > li > div ::after {
 
 #hp {
   background-color: rgb(127, 127, 255);
-  clip-path: circle(62% at 50% 90%);
+  clip-path: circle(62% at 50% 89%);
   color: var(--base-color-whit);
   font-weight: 100;
   border-bottom: 1px solid rgb(3, 3, 3);
@@ -275,7 +273,7 @@ ul > li > div ::after {
 
 #atk {
   background-color: rgb(255, 127, 148);
-  clip-path: circle(62% at 50% 90%);
+  clip-path: circle(62% at 50% 89%);
   color: var(--base-color-whit);
   font-weight: 100;
   border-bottom: 1px solid rgb(3, 3, 3);
@@ -283,7 +281,7 @@ ul > li > div ::after {
 
 #def {
   background-color: rgb(114, 157, 106);
-  clip-path: circle(62% at 50% 90%);
+  clip-path: circle(62% at 50% 89%);
   color: var(--base-color-whit);
   font-weight: 100;
   border-bottom: 1px solid rgb(3, 3, 3);
@@ -291,7 +289,7 @@ ul > li > div ::after {
 
 #spa {
   background-color: rgb(230, 44, 44);
-  clip-path: circle(62% at 50% 90%);
+  clip-path: circle(62% at 50% 89%);
   color: var(--base-color-whit);
   font-weight: 100;
   border-bottom: 1px solid rgb(3, 3, 3);
@@ -299,7 +297,7 @@ ul > li > div ::after {
 
 #spd {
   background-color: rgb(26, 132, 24);
-  clip-path: circle(62% at 50% 90%);
+  clip-path: circle(62% at 50% 89%);
   color: var(--base-color-whit);
   font-weight: 100;
   border-bottom: 1px solid rgb(3, 3, 3);
@@ -307,7 +305,7 @@ ul > li > div ::after {
 
 #sped {
   background-color: rgb(69, 147, 232);
-  clip-path: circle(62% at 50% 90%);
+  clip-path: circle(62% at 50% 89%);
   color: var(--base-color-whit);
   font-weight: 100;
   border-bottom: 1px solid rgb(3, 3, 3);

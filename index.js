@@ -1,15 +1,24 @@
 
+
 const d=document;
-let offset=1;
-let limit=8;
-const btnNext=d.getElementById("btnSiguiente");
-const btnPrevious=d.getElementById("btnAnterior");
 const pokeList = d.getElementById("pokelist");
 const pokemonDetails=d.getElementById("details-section");
 const listSection= d.getElementById("listsection");
-let url="https://pokeapi.co/api/v2/pokemon?offset=0&limit=10";
+let nextLink="";
+let prevLink="";
+
+const prev=()=>{
+  getPokemons(prevLink)
+}
+
+const next=()=>{
+  getPokemons(nextLink)
+}
+
+let url="https://pokeapi.co/api/v2/pokemon/";
 function fillPokemonDetails(ID){
 }
+
 
 function getPokeImag(ID){
   return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${ID}.png`
@@ -30,8 +39,9 @@ function addListeners(){
   });
 };
 
-(() => {
+
   const pokemonshtml = document.getElementById("pokelist");
+const getPokemons=(url)=>{
   fetch(url)
     .then((resolved) => resolved.json())
     .then((resolved) => {
@@ -39,7 +49,9 @@ function addListeners(){
       let poke = resolved.results;
       for (let i = 0; i < poke.length; i++) {
         const ID = poke[i].url.split("/")[6];
-        const pokename = poke[i].name; 
+        const pokename = poke[i].name;
+        nextLink=resolved.next;
+        prevLink=resolved.previous;
         pokemonsli =
           pokemonsli +
           `
@@ -61,5 +73,6 @@ function addListeners(){
   .catch((error) => {
       console.log(error);
     });
-})();
-
+}
+getPokemons(`${url}?offset=0&limit=10`);
+  
