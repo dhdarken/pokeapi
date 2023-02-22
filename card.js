@@ -1,3 +1,24 @@
+//const weakness={
+  //bug:{flying,rock,fire},
+  //dragon:{dragon,ice,fairy},
+  //electric:{ground},
+  //fairy:{veneno},
+  //fighting:{fairy,psychic,flying},
+  //fire:{water,ground,rock},
+  //flying:{ice,rock,electric},
+  //grass:{fire,ice,flying,bug,poison},
+  //ground:{grass,ice,water},
+  //ghost:{ghost},
+  //ice:{fire,fighting,rock},
+  //normal:{fighting},
+  //poison:{ground,psychic},
+  //psychic:{bug,ghost},
+  //rock:{fighting,water,grass},
+  //water:{grass,electric},
+//};
+
+
+
 const typeColor={
   bug:"#26de81",
   dragon:"#ffeaa7",
