@@ -1,11 +1,13 @@
 
 const d=document;
+let offset=1;
+let limit=8;
 const btnNext=d.getElementById("btnSiguiente");
 const btnPrevious=d.getElementById("btnAnterior");
 const pokeList = d.getElementById("pokelist");
 const pokemonDetails=d.getElementById("details-section");
 const listSection= d.getElementById("listsection");
-let url="https://pokeapi.co/api/v2/pokemon?offset=0&limit=9";
+let url="https://pokeapi.co/api/v2/pokemon?offset=0&limit=10";
 function fillPokemonDetails(ID){
 }
 
@@ -28,13 +30,11 @@ function addListeners(){
   });
 };
 
-
 (() => {
   const pokemonshtml = document.getElementById("pokelist");
   fetch(url)
     .then((resolved) => resolved.json())
     .then((resolved) => {
-      console.log(resolved.next)
       let pokemonsli = "";
       let poke = resolved.results;
       for (let i = 0; i < poke.length; i++) {
@@ -62,3 +62,4 @@ function addListeners(){
       console.log(error);
     });
 })();
+

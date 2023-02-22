@@ -18,101 +18,83 @@ const typeColor={
 }
 const especies = document.querySelector(".card");
 const getUrl= new URLSearchParams(window.location.search);
-id = getUrl.get("id");
+let id = getUrl.get("id");
 const url="https://pokeapi.co/api/v2/pokemon";
 function getPokeImag(id){
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
   }
 
 const urlFinal=`${url}/${id}`;
-console.log(urlFinal)
+
 
 const d=document;
 const btnAnterior=d.getElementById("btnAnterior");
 const btnSiguiente=d.getElementById("btnSiguiente");
 btnAnterior.addEventListener("click",(e)=>{
-  const click=e.target
-  console.log(click);
-})
+  window.location.href=`/details.html?id=${id-1}`;
+  })
+ 
+
 btnSiguiente.addEventListener("click",(e)=>{
-  const clicks=e.target
-  console.log(clicks);
+  window.location.href=`/details.html?id=${Number(id)+1}`;
 })
 
 
 fetch(urlFinal)
 .then((resolved) => resolved.json())
 .then(data => {
-        console.log(data);
-        const ability1=data.abilities[0].ability.name;
-        const ability2=data.abilities[1].ability.name;
-        const type1=data.types[0].type.name;
+        console.log(data)
         const pokename= data.name;
-        const hp=data.stats[0].base_stat;   
+        const hp=data.stats[0].base_stat;
         const statAtack=data.stats[1].base_stat;
         const statDef=data.stats[2].base_stat;
         const specAtack=data.stats[3].base_stat;
         const specDefen=data.stats[4].base_stat;
         const statSpeed=data.stats[5].base_stat;
-        //console.log(ability1);
-        //console.log(ability2);
-        //console.log(type1);
-        //console.log(pokename);
-        //console.log(hp);
-        //console.log(statAtack);
-        //console.log(statDef);
-        //console.log(specAtack);
-        //console.log(specDefen);
-        //console.log(statSpeed);
         card.innerHTML=`
-        
-          <p id="hp"> ${id}</p>
+          <p id="id"> ${id}</p>
           <img id="w_imag" src="${getPokeImag(id)}" alt="pokemon ${pokename} ">
+
           <h2 class="pokename">${pokename} </h2>
-          <div id="types">
-                  <div>
-                    <span>type 1</span>
-                    <h3>${type1} </h3>
-                  </div>
+          <div class="types">
+          ${data.types?.map(pokemonType=> (
+            '<span>'+pokemonType?.type?.name+'</span>'
+          )).join(' ')}
           </div>
-          <div id="abilities">
-                  <div>
-                    <span>Ability 1</span>
-                    <h3>${ability1} </h3>
-                  </div>
-                  <div>
-                    <span>Ability 2</span>
-                    <h3>${ability2} </h3>
-                  </div>
+          <div class="abilities">
+          ${data.abilities?.map(habilitiesPoke=>(
+            "<span>"+habilitiesPoke?.ability?.name+"</span>"
+          )).join(" ")}
           </div>
           <div class="pokestats">
               <div>
-                <h3>${hp} </h3>
-                <span>🩸</span>
+                <h3 id="hp">${hp} </h3>
+                <span >HP</span>
               </div>
               <div>
-                  <h3>${statAtack} </h3>
-                  <span>⚔️</span>
+                  <h3 id="atk">${statAtack} </h3>
+                  <span>ATK</span>
               </div>
               <div>
-                  <h3>${statDef} </h3>
-                  <span>🛡️</span>
+                  <h3 id="def">${statDef} </h3>
+                  <span>DEF</span>
               </div>
               <div>
-              <h3>${specAtack}</h3>
-              <span>⚔️➕</span>
+              <h3 id="spa">${specAtack}</h3>
+              <span>SpA</span>
               </div>
               <div>
-                <h3>${specDefen} </h3>
-                <span>🛡️➕</span>
+                <h3 id="spd">${specDefen} </h3>
+                <span>SpD</span>
               </div>
               <div>
-                <h3>${statSpeed} </h3>
-                <span>💨</span>
+                <h3 id="sped">${statSpeed} </h3>
+                <span>SPED</span>
               </div>
           </div>
         
-        `  
+        `;
       })
 .catch((error)=>console.error());
-;
+
+
