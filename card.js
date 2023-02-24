@@ -78,9 +78,6 @@ fetch(urlFinal)
           //console.log(typeColor);
         //}
 
-        const themeColor=typeColor[data.types[0].type.name];
-
-
         card.innerHTML=`
           <p id="id"> ${id}</p>
           <img id="w_imag" src="${getPokeImag(id)}" alt="pokemon ${pokename} ">
@@ -88,7 +85,7 @@ fetch(urlFinal)
           <h2 class="pokename">${pokename} </h2>
           <div class="types">
           ${data.types?.map(pokemonType=> (
-            `<span class="types" style= "background-color:${themeColor}" >`+pokemonType?.type?.name+'</span>'
+            `<span class="types" style="background-color:${typeColor[pokemonType.type.name]}" >`+pokemonType?.type?.name+'</span>'
           )).join(' ')}
           </div>
           <div class="abilities">

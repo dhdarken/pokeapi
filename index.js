@@ -74,5 +74,5 @@ const getPokemons=(url)=>{
       console.log(error);
     });
 }
-getPokemons(`${url}?offset=0&limit=10`);
+getPokemons(`${url}?offset=0&limit=12`);
   
